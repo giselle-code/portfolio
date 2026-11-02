@@ -1,24 +1,15 @@
 # Giselle — Portfolio
 
-A minimal, black portfolio with grass-green typography, a pointer-driven image trail, and a closely spaced masonry project gallery.
+Minimal black portfolio with grass-green typography, a pointer-driven image trail, and a tightly spaced masonry gallery.
 
-## Website
+The complete website is `site/index.html`. It includes all CSS, JavaScript, and artwork, so no build tools or external asset services are required. Open it directly in a browser to preview.
 
-Static HTML, CSS, and JavaScript live in `site/`. No dependency installation or build step is needed. All images are local to the repository.
+The pointer animation cycles through 16 supplied portfolio images while preserving their proportions. The project gallery currently contains illustrative concept projects.
 
-- `site/index.html`: page layout and content
-- `site/style.css`: styling and responsive layouts
-- `site/script.js`: image trail, project viewer, and mobile navigation
-- `site/assets/trails/`: the 16 supplied portfolio images optimized for the pointer animation
+## Publish with GitHub Pages
 
-The masonry gallery currently contains illustrative concept projects. The pointer animation uses Giselle's supplied artwork.
+Under **Settings → Pages → Build and deployment**, select **GitHub Actions**. The workflow publishes `site/` on pushes to `main`, and also supports manual runs from Actions.
 
-## Deployment
+Expected website address after publishing: https://giselle-code.github.io/portfolio/
 
-In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The included workflow publishes `site/` when changes are pushed to `main`, or when started manually in Actions.
-
-Expected address after deployment: https://giselle-code.github.io/portfolio/
-
-## Preview locally
-
-Open `site/index.html` in a browser, or serve the `site/` folder with any static HTTP server.
+Source HTML, CSS, and JavaScript can be edited in `site/index.html`.
