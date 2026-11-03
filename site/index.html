@@ -12,6 +12,10 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.trails{display:none}}
 
 .demo-note[hidden]{display:none}
+
+/* Full project pages */
+[hidden]{display:none!important}.project-page .nav{position:absolute;color:#fff;mix-blend-mode:difference}.detail-hero{height:100svh;min-height:620px;position:relative;isolation:isolate;overflow:hidden}.detail-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.detail-hero h1{position:absolute;left:51%;right:20px;bottom:42px;font-size:clamp(64px,9.8vw,170px);line-height:.95;letter-spacing:-.065em;white-space:normal;color:white;mix-blend-mode:difference;outline:0}.detail-back{position:absolute;left:20px;bottom:45px;font-size:14px;color:#fff;mix-blend-mode:difference}.detail-info{padding:60px 20px 100px;display:grid;grid-template-columns:1fr 4.8fr;gap:20px}.detail-info h2,.detail-more h2{font-size:14px;line-height:1.2;font-weight:400;margin:0}.detail-info p{font-size:clamp(32px,3.7vw,64px);line-height:1.04;letter-spacing:-.055em;margin:0;text-indent:20%;max-width:1200px}.detail-meta{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:150px 0 0 40%;font-size:14px;line-height:1.3}.detail-meta dt{color:var(--muted);margin-bottom:14px}.detail-meta dd{margin:0}.detail-gallery{padding:0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.detail-gallery figure{margin:0;min-width:0;background:#101010}.detail-gallery figure:nth-child(3n+1){grid-column:1/-1}.detail-gallery img{display:block;width:100%;height:auto}.detail-gallery figure:not(:nth-child(3n+1)) img{height:100%;object-fit:contain}.detail-more{padding:110px 20px 0}.detail-more-heading{display:flex;justify-content:space-between;margin-bottom:30px;font-size:14px}.detail-related{display:grid;grid-template-columns:1fr 1fr;gap:6px}.related-project{position:relative;aspect-ratio:1.15;isolation:isolate;overflow:hidden}.related-project>img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.related-project:hover>img{transform:scale(1.025)}.related-caption{position:absolute;inset:auto 20px 25px;display:flex;align-items:end;gap:24px;color:#fff;mix-blend-mode:difference}.related-caption>span{font-size:32px;letter-spacing:-1px;flex:1;line-height:1.05}.related-caption small{font-size:13px;width:140px}.detail-end{display:flex;align-items:end;justify-content:space-between;padding:100px 20px 35px;font-size:14px}.detail-end>span{font-size:clamp(70px,13vw,220px);line-height:.8;letter-spacing:-.075em}
+@media(max-width:600px){.detail-hero{min-height:560px;height:90svh}.detail-hero h1{left:15px;right:15px;bottom:90px;font-size:clamp(48px,15vw,80px);line-height:.98;letter-spacing:-.06em}.detail-back{left:15px;bottom:28px}.detail-info{padding:40px 15px 65px;display:block}.detail-info h2{margin-bottom:35px;font-size:12px}.detail-info p{font-size:32px;line-height:1.08;text-indent:18%;letter-spacing:-1.2px}.detail-meta{margin:65px 0 0;gap:25px;font-size:12px}.detail-gallery{padding:0 5px;gap:5px;display:block}.detail-gallery figure{margin-bottom:5px}.detail-gallery figure:not(:nth-child(3n+1)) img{height:auto}.detail-more{padding:70px 5px 0}.detail-more-heading{padding:0 10px;font-size:12px}.detail-more-heading h2{font-size:12px}.detail-related{grid-template-columns:1fr;gap:5px}.related-caption{inset:auto 15px 20px}.related-caption>span{font-size:28px}.related-caption small{width:120px;font-size:12px}.detail-end{padding:70px 15px 30px;align-items:start;gap:40px;flex-direction:column}.detail-end>span{font-size:24vw}}
 </style>
 </head>
 <body>
@@ -34,7 +38,13 @@
 <section class="about" id="about"><div class="about-label"><span class="star">✳</span> A LITTLE ABOUT ME</div><div class="about-main"><h2>Considered design.<br>Lasting impression.</h2><p>I’m Giselle, a designer drawn to the balance between simplicity and expression. I connect strategy, visual identity, and digital design to create work that feels intentional — and unmistakably itself.</p><div class="disciplines"><span>Brand identity</span><span>Digital design</span><span>Art direction</span></div></div></section>
 </main>
 <footer><a class="footer-name" href="#home">Giselle<span>↗</span></a><div class="footer-bottom"><span>© 2026 GISELLE</span><span class="preview-note">DESIGN PREVIEW · CONCEPT PROJECTS</span><a href="#home">BACK TO TOP ↑</a></div></footer>
-<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-index"></span><span>CONCEPT PROJECT</span><button class="close" aria-label="Close project">Close ✕</button></div><div class="dialog-body"><div class="dialog-description"><h2 id="dialog-title"></h2><span id="dialog-category"></span><p id="dialog-text"></p><span class="demo-note">Illustrative concept for this portfolio preview.<br>Ready to be replaced with your own work.</span></div><img id="dialog-image" alt=""></div><button class="next-project">Next project <span>→</span></button></dialog>
+<main id="project-detail" hidden aria-labelledby="detail-title">
+<section class="detail-hero"><img id="detail-cover" alt=""><h1 id="detail-title" tabindex="-1"></h1><a class="detail-back" href="#work">← All works</a></section>
+<section class="detail-info"><h2>INFO</h2><div><p id="detail-description"></p><dl class="detail-meta"><div><dt>PROJECT</dt><dd id="detail-client"></dd></div><div><dt>SERVICES</dt><dd id="detail-services"></dd></div></dl></div></section>
+<section class="detail-gallery" aria-label="Project images"></section>
+<section class="detail-more"><div class="detail-more-heading"><h2>MORE WORKS</h2><a href="#work">See all (6) ↗</a></div><div class="detail-related"></div></section>
+<div class="detail-end"><a href="#work">Back to all works ↑</a><span>Giselle</span></div>
+</main>
 <script>const artworks={};document.querySelectorAll("img[data-artwork]").forEach(image=>{artworks[image.dataset.artwork]=image.src});
 const projects = [
  {name:'Bamwave',asset:'bamwave',category:'Brand，packaging，website design',text:'Bamwave — brand, packaging, and website design.',concept:false},
@@ -61,10 +71,39 @@ hero.addEventListener('pointermove',e=>{
  while(layer.children.length>10)layer.firstElementChild.remove();
  lastX=x;lastY=y;lastTime=now;sequence++;
 });
-const dialog=document.querySelector('dialog');let current=0,opener;
-function showProject(id){current=id;const p=projects[id];document.querySelector('#dialog-title').textContent=p.name;document.querySelector('#dialog-category').textContent=p.category;document.querySelector('#dialog-text').textContent=p.text;document.querySelector('#dialog-index').textContent=`SELECTED WORK / 0${id+1}`;const image=document.querySelector('#dialog-image');image.src=artworks[p.asset];image.alt=`${p.name} design project`;document.querySelector(".dialog-top > span:nth-child(2)").textContent=p.concept===false?"PROJECT":"CONCEPT PROJECT";document.querySelector(".demo-note").hidden=p.concept===false;dialog.scrollTop=0;if(!dialog.open){dialog.showModal();document.body.classList.add('modal-open')}}
-document.querySelectorAll('.project').forEach(button=>button.addEventListener('click',()=>{opener=button;showProject(Number(button.dataset.id))}));
-document.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');opener?.focus({preventScroll:true})});document.querySelector('.next-project').addEventListener('click',()=>showProject((current+1)%projects.length));
+const projectSlugs=['bamwave','cafe-greenfingers','green-legend','bananothing-double-eggs','index','mono'];
+const galleryIndices=[[7],[0,1,2,3,5,6],[8,9,10,12,13,14],[],[],[]];
+const detail=document.querySelector('#project-detail');
+const homeMain=document.querySelector('main');
+const homeFooter=document.querySelector('body > footer');
+let homeScroll=null,activeProject=-1;
+function coverFor(p){return document.querySelector('.project[data-id="'+projects.indexOf(p)+'"] img').src}
+function projectLink(id){return '#works/'+projectSlugs[id]}
+function imageElement(src,alt){const img=document.createElement('img');img.src=src;img.alt=alt;img.loading='lazy';img.decoding='async';return img}
+function renderProject(id){
+ const p=projects[id];activeProject=id;
+ homeMain.hidden=true;homeFooter.hidden=true;detail.hidden=false;document.body.classList.add('project-page');
+ document.title=p.name+' — Giselle';
+ const cover=document.querySelector('#detail-cover');cover.src=coverFor(p);cover.alt=p.name+' project cover';
+ document.querySelector('#detail-title').textContent=p.name;
+ document.querySelector('#detail-description').textContent=p.text;
+ document.querySelector('#detail-client').textContent=p.name;
+ document.querySelector('#detail-services').textContent=p.category;
+ const gallery=document.querySelector('.detail-gallery');gallery.replaceChildren();
+ galleryIndices[id].forEach((index,i)=>{const figure=document.createElement('figure');figure.append(imageElement(trailImages[index],p.name+' — project detail '+(i+1)));gallery.append(figure)});
+ const related=document.querySelector('.detail-related');related.replaceChildren();
+ [1,2].forEach(offset=>{const next=(id+offset)%projects.length,q=projects[next],a=document.createElement('a');a.href=projectLink(next);a.className='related-project';a.append(imageElement(coverFor(q),q.name+' project'));const caption=document.createElement('span');caption.className='related-caption';const title=document.createElement('span');title.textContent=q.name;const category=document.createElement('small');category.textContent=q.category;caption.append(title,category);a.append(caption);related.append(a)});
+ window.scrollTo({top:0,behavior:'instant'});
+ document.querySelector('#detail-title').focus({preventScroll:true});
+}
+function routeProject(){
+ const match=location.hash.match(/^#works\/([^/]+)$/),id=match?projectSlugs.indexOf(match[1]):-1;
+ if(id>=0){if(activeProject<0&&!document.querySelector('#project-detail').hidden)homeScroll=window.scrollY;renderProject(id);return}
+ if(activeProject>=0){activeProject=-1;homeMain.hidden=false;homeFooter.hidden=false;detail.hidden=true;document.body.classList.remove('project-page');document.title='Giselle — Independent Designer';const target=document.querySelector(location.hash==='#about'?'#about':location.hash==='#home'?'#home':'#work');window.scrollTo({top:location.hash==='#work'?(homeScroll??target.offsetTop):target.offsetTop,behavior:'instant'});}
+}
+document.querySelectorAll('.project').forEach(button=>button.addEventListener('click',()=>{homeScroll=window.scrollY;location.hash=projectLink(Number(button.dataset.id))}));
+window.addEventListener('hashchange',routeProject);
+routeProject();
 
 const menuToggle=document.querySelector(".menu-toggle");const navHeader=document.querySelector(".nav");function closeMenu(){navHeader.classList.remove("menu-open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="Menu"}menuToggle.addEventListener("click",()=>{const open=navHeader.classList.toggle("menu-open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.textContent=open?"Close":"Menu"});document.querySelectorAll(".nav nav a").forEach(a=>a.addEventListener("click",closeMenu));document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
 </script>
